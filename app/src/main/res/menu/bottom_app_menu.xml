@@ -6,12 +6,6 @@
         android:title="Add"
         android:icon="@drawable/add"
         app:showAsAction="ifRoom"/>
-
-    <item
-        android:id="@+id/add_list"
-        android:title="List"
-        android:icon="@drawable/list"
-        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/add_reminder"
         android:title="Reminder"

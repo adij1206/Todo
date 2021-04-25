@@ -51,6 +51,26 @@
                 android:layout_below="@id/popup_add_item_desp"
                 android:backgroundTint="@color/colorPrimary"/>
 
+<!--            <Button-->
+<!--                android:id="@+id/popup_add_noti_btn"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Open Time Picker"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textSize="18sp"-->
+<!--                android:layout_below="@id/popup_add_save_btn"-->
+<!--                android:backgroundTint="@color/colorPrimary"/>-->
+
+<!--            <Button-->
+<!--                android:id="@+id/popup_add_can_btn"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Cancel Alarm"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textSize="18sp"-->
+<!--                android:layout_below="@id/popup_add_noti_btn"-->
+<!--                android:backgroundTint="@color/colorPrimary"/>-->
+
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

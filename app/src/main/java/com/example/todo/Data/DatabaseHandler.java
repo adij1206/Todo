@@ -51,7 +51,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         Log.d("Saved", "Saving in db ");
     }
 
-    //Get a grocery
+    //Get a Note
     public Note getNote(int id){
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -75,7 +75,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return note;
     }
 
-    //Get all Grocery
+    //Get all Note
     public List<Note> getAllNote(){
         SQLiteDatabase db = this.getReadableDatabase();
         List<Note> noteList = new ArrayList<>();
@@ -104,7 +104,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return noteList;
     }
 
-    //Update Grocery
+    //Update Note
     public int updateNote(Note note){
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -117,14 +117,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     }
 
-    //Delete Grocery
+    //Delete Note
     public void deleteNote(int id){
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(Constants.TABLE_NAME,Constants.KEY_ID + "=?",new String[]{String.valueOf(id)});
         db.close();
     }
 
-    // Get count of all groceries
+    // Get count of all notes
     public int getNoteCount(){
         String countQuery = "SELECT * FROM " + Constants.TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();

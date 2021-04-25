@@ -10,10 +10,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.todo.Fragments.AddFragment;
-import com.example.todo.Fragments.ListFragment;
 import com.example.todo.Fragments.ReminderFragment;
 import com.example.todo.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         navigationView.setOnNavigationItemSelectedListener(this);
 
        // floatingActionButton = findViewById(R.id.fab_add);
-
-
     }
 
 
@@ -64,16 +62,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         switch (menuItem.getItemId()){
             case R.id.add_todo:
                 fragment = new AddFragment();
-               floatingActionButton.setOnClickListener(new View.OnClickListener() {
+               /*floatingActionButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(MainActivity.this,"Fab Pressed",Toast.LENGTH_SHORT).show();
                        createPopup();
                     }
-                });
-                break;
-            case R.id.add_list:
-                fragment = new ListFragment();
+                });*/
                 break;
             case R.id.add_reminder:
                 fragment = new ReminderFragment();
@@ -92,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         Button saveBtn = (Button) view.findViewById(R.id.popup_add_save_btn);
 
         builder.setView(view);
+       // builder.setTitle("Add Notes");
 
         dialog = builder.create();
         dialog.show();
@@ -103,5 +99,30 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 dialog.dismiss();
             }
         });
+    }
+
+    private void createReminderPopup(){
+        builder = new AlertDialog.Builder(this);
+        View view = getLayoutInflater().inflate(R.layout.popup_reminder,null);
+
+        EditText addListName = (EditText) view.findViewById(R.id.popup_reminder_item_name);
+        TextView addListTime = (TextView) view.findViewById(R.id.popup_reminder_item_desp);
+        Button saveBtn = (Button) view.findViewById(R.id.popup_reminder_save_btn);
+        Button timePickerBtn = (Button) view.findViewById(R.id.popup_reminder_open_timepicker);
+
+        builder.setView(view);
+        // builder.setTitle("Add Notes");
+
+        dialog = builder.create();
+        dialog.show();
+
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"save Pressed",Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+
     }
 }
